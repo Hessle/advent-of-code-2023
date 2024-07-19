@@ -12,12 +12,12 @@ function linesFromFile() {
 function getLineObjects(lines) {
     let lineObjects = [];
     lines.forEach((line, i) => {
-        let lineObject = {line: line};
+        let lineObject = {line:".." + line + ".."};
         if (i > 0) {
-            lineObject.previousLine = lines[i - 1];
+            lineObject.previousLine = ".." + lines[i - 1] + "..";
         }
         if (i < lines.length - 1) {
-            lineObject.nextLine = lines[i + 1];
+            lineObject.nextLine = ".." + lines[i + 1] + "..";
         }
         lineObjects.push(lineObject);
     });
@@ -57,7 +57,6 @@ function determineLine (line, index){
 function getTotalNumbers(objects) {
     let totalValidNumbers = 0;
     objects.forEach(object => {
-        console.log(object);
         object.numberIndices.forEach(index => {
             const Nr = parseInt(object.line.substring(index.numberIndexStart, index.numberIndexEnd + 1));
             const ownLineResult = determineLine(object.line, index);

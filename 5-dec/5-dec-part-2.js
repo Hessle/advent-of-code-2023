@@ -31,7 +31,6 @@ function checkSeed(seed, seedLists){
         let upperBound = parseInt(list[0]) + parseInt(list[1]);
 
        if(parseInt(seed) >= lowerBound && parseInt(seed)< upperBound) {
-           console.log(seed, "is between", lowerBound, " and ",upperBound);
            found = true;
        }
     });

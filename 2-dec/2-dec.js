@@ -24,7 +24,6 @@ function checkValid(colours) {
         } else if (parts[1] === 'blue' ) {
             testNr = MAX_BLUE;
         }
-        console.log("parts: ", parts);
         if (parts[0] > testNr) {
             isValid = false;
         }
@@ -36,10 +35,8 @@ function totalEligibleGames(games) {
     let sumGameIds= 0;
 
     games.forEach((game, i) => {
-        const pulls = game.split(";");
         const colours = game.split(/[,;]/);
         if(checkValid(colours)){
-            console.log("game on line", (i+1),":", game, "is valid");
             sumGameIds = sumGameIds + (i+1);
         }
 

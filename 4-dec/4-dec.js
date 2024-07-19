@@ -40,5 +40,4 @@ function getPoints(cards) {
 
 const lines = linesFromFile();
 const cardObjects = getCardObjects(lines);
-console.log("cards: ", cardObjects);
 console.log(`Points ${getPoints(cardObjects)}`);

@@ -1,7 +1,3 @@
-// get numbers in object {number, line, lineNr}
-// for each number check current line directly in front and after
-// for each number check line above and beneath.
-
 import fs from "fs";
 
 function linesFromFile() {
@@ -84,6 +80,7 @@ function getNmrsOnOwnLine(index, line){
     }
     return foundNrs;
 }
+
 function getConnectedNrs(index, object){
     let foundNrs= [];
     if(object.previousLine){
