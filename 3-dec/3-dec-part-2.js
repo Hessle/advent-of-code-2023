@@ -39,7 +39,7 @@ function getNmrsOnOtherLine(index, line){
     let firstDigitPosition = targetChars.search(/\d/);
     let lastDigitPosition = 2 - targetChars.split("").reverse().join('').search(/\d/);
     if(areTwoNumbers){
-        let parts = line.substring(0, index).split(/[/.*=&@$%\-+#]+/);
+        let parts = line.substring(0, index).split(/\D+/);
         let firstNumber = parts[parts.length-1];
         let secondNumber = line.substring(index+1).replace(/(^\d+)(.+$)/i,'$1');
         foundNrs.push(firstNumber,secondNumber);
@@ -47,7 +47,7 @@ function getNmrsOnOtherLine(index, line){
         // if firstDigitPosition is not 0 that means that number starts from firstDigit in targetRange.
         if (firstDigitPosition >= 1) {
             let substr= line.substring(index-1 + firstDigitPosition);
-            let parts = substr.split(/[/.*=&@$%\-+#]+/);
+            let parts = substr.split(/\D+/);
             let foundNr = parts[0];
             foundNrs.push(foundNr);
         }
@@ -56,7 +56,7 @@ function getNmrsOnOtherLine(index, line){
 
             let substr = line.substring(0, index+lastDigitPosition);
             let reverseSubstr = substr.split('').reverse().join('');
-            let parts = reverseSubstr.split(/[/.*=&@$%\-+#]+/);
+            let parts = reverseSubstr.split(/\D+/);
             let foundNr = parts[0].split('').reverse().join('');
 
             foundNrs.push(foundNr);
@@ -69,12 +69,12 @@ function getNmrsOnOtherLine(index, line){
 function getNmrsOnOwnLine(index, line){
     let foundNrs = [];
     if (/\d/.test(line.charAt(index-1))){
-        let parts = line.substring(0, index).split(/[/.*=&@$%\-+#]+/);
+        let parts = line.substring(0, index).split(/\D+/);
         let numberBeforeGear = parts[parts.length-1];
         foundNrs.push(numberBeforeGear);
     }
     if (/\d/.test(line.charAt(index+1))){
-        let parts = line.substring(index+1).split(/[/.*=&@$%\-+#]+/);
+        let parts = line.substring(index+1).split(/\D+/);
         let numberAfterGear = parts[0];
         foundNrs.push(numberAfterGear);
     }

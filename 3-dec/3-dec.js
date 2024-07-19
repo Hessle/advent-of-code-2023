@@ -49,7 +49,7 @@ function addNumberIndices(objects) {
 }
 
 function determineLine (line, index){
-    const regx = new RegExp(/[/*=&@$%\-+#]+/);
+    const regx = new RegExp(/[\D/.]+/);
     const substr = line.substring(index.numberIndexStart - 1, index.numberIndexEnd + 2);
     return regx.test(substr);
 }
