@@ -6,7 +6,6 @@ function linesFromFile() {
 }
 
 function getGamePower(game) {
-    const pulls = game.split(";");
     const colours = game.split(/[,;]/);
 
     let minRed = 0;
@@ -33,8 +32,6 @@ function getTotalPower(games) {
     let totalPower= 0;
 
     games.forEach((game) => {
-        const pulls = game.split(";");
-        const colours = game.split(/[,;]/);
         const currentGamePower = getGamePower(game);
         totalPower = totalPower + currentGamePower;
 
