@@ -61,4 +61,4 @@ function getPredications(valueLists) {
 }
 
 const valueLists = getValueLists();
-console.log("This is the preduction sum: ",getPredications(valueLists));
+console.log("This is the prediction sum: ",getPredications(valueLists));

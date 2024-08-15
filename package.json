@@ -1,7 +1,8 @@
 {
-  "type":"module",
+  "type": "module",
   "dependencies": {
-    "node": "^18.20.4",
-    "@types/node": "18.19.34"
+    "@types/node": "18.19.34",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }
